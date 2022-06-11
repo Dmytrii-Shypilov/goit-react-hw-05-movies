@@ -1,0 +1,48 @@
+.header {
+    
+    display: flex;
+    align-items: center;
+  
+    width: 100vw;
+    height: 70px;
+    background-color: #03a1fc;
+
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1em;
+    color: black;
+
+}
+
+
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    list-style: none;
+    padding-left: 50px;
+    align-items: center;
+    
+}
+
+.listItem {
+    margin-right: 25px;
+}
+
+.link {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+.active {
+    color: blue;
+}
