@@ -1,0 +1,83 @@
+.section {
+    position: relative;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 20px;
+}
+.image {
+    display: block;
+}
+.movie {
+    padding-top: 20px;
+    display: flex;
+}
+
+.description {
+    margin-left: 35px;
+}
+
+.button {
+    width: 70px;
+    height: 25px;
+    background-color: #03a1fc;
+    border: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+
+    font-weight: 700;
+    color: white;
+}
+
+.info {
+    display: block;
+    margin-bottom: 15px;
+  
+    font-weight: 700;
+}
+
+.title {
+    margin-bottom: 40px;
+    font-size: 30px;
+}
+
+.vote {
+    background-color: #03a1fc;
+    color: white;
+    border-radius: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.genres {
+    margin-left: 5px;
+    font-weight: 400;
+}
+
+.linksList {
+    position: absolute;
+    display: flex;
+    top: 390px;
+    left: 0;
+    width: 220px;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0;
+}
+.listItem:not(:last-child) {
+    margin-right: 10px;
+}
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 25px;
+    background-color: #03a1fc;
+    border: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}

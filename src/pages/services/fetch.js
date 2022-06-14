@@ -23,8 +23,21 @@ const fetchById = async (id) => {
   );
   return movies;
 }
+
+const fetchCastById = async (id) => {
+  const cast = await axios.get(`${baseURL}movie/${id}/credits?api_key=${key}`)
+  return cast
+}
+
+const fetchReviewsById = async (id) => {
+  const reviews = await axios.get(`${baseURL}movie/${id}/reviews?api_key=${key}`)
+  return reviews
+}
+
 export const API = {
   byQuery: fetchByQuery,
   trending: fetchTrending,
   byId: fetchById,
+  fetchReviewsById,
+  fetchCastById,
 };

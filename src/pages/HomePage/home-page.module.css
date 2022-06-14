@@ -1,5 +1,5 @@
 .section {
-    padding-top: 70px;
+    padding-top: 20px;
 
     width: 1000px;
     margin-right: auto;
@@ -7,5 +7,6 @@
 }
 
 .title {
+    margin-top: 0;
     text-align: center;
 }
