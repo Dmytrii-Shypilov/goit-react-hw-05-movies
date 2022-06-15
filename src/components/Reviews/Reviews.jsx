@@ -2,7 +2,7 @@ import s from './reviews.module.css';
 
 import { API } from 'pages/services/fetch';
 import { useEffect, useState } from 'react';
-import { createSearchParams, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const Reviews = () => {
   const [reviews, setReviews] = useState({
@@ -17,44 +17,43 @@ const Reviews = () => {
       return {
         ...prevState,
         loading: true,
-      }
-    })
+      };
+    });
     const fetchReviews = async () => {
       try {
         const fetched = await API.fetchReviewsById(movieId);
-        const reviews = fetched.data.results
+        const reviews = fetched.data.results;
         setReviews(prevState => {
           return {
             ...prevState,
             comments: reviews,
             loading: false,
-          }
-        })
+          };
+        });
       } catch (error) {
-        setReviews(prevState=> {
+        setReviews(prevState => {
           return {
             ...prevState,
             loading: false,
             error: error.message,
-          }
-        })
+          };
+        });
       }
     };
-    fetchReviews()
+    fetchReviews();
   }, [movieId]);
 
   const elements = reviews.comments.map(comment => {
-    const {author, content} = comment
+    const { author, content } = comment;
     return (
       <li>
         <p className={s.author}>{author}</p>
         <p className={s.comment}>{content}</p>
       </li>
-    )
-  })
+    );
+  });
 
-  const {comments, loading, error} = reviews
-
+  const { comments, loading, error } = reviews;
 
   return (
     <section className={s.section}>
@@ -66,11 +65,13 @@ const Reviews = () => {
         </>
       )}
       <h2 className={s.title}>Reviews</h2>
-     <ul className={s.list}>
-      {comments.length>0 ? elements : <div className={s.message}>There are no comments yet</div>}
-     </ul>
+      {comments.length > 0 ? (
+        <ul className={s.list}>{elements} </ul>
+      ) : (
+        <div className={s.message}>There are no comments yet</div>
+      )}
     </section>
   );
 };
 
-export default Reviews
+export default Reviews;

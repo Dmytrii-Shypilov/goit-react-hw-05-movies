@@ -49,8 +49,6 @@ const Cast = () => {
       ? `https://image.tmdb.org/t/p/w500${profile_path}`
       : 'https://sd.keepcalms.com/i/keep-calm-poster-not-found.png';
 
-
-
     return (
       <li className={s.listItem}>
         <img className={s.image} src={image} alt="" />
@@ -65,7 +63,7 @@ const Cast = () => {
     );
   });
 
-const {actors, loading, error} = cast
+  const { actors, loading, error } = cast;
 
   return (
     <section className={s.section}>
@@ -77,9 +75,12 @@ const {actors, loading, error} = cast
         </>
       )}
       <h2 className={s.title}>Cast</h2>
-      <ul className={s.list}>
-      {actors.length>0 ? elements : <div className={s.message}>There are no cast details</div>}
-      </ul>
+
+      {actors.length > 0 ? (
+        <ul className={s.list}>{elements}</ul>
+      ) : (
+        <div className={s.message}>There are no cast details</div>
+      )}
     </section>
   );
 };

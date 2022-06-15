@@ -1,0 +1,17 @@
+.message {
+    display: flex;
+    width: 1000px;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 1px dashed #03a1fc;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #03a1fc;
+  }
+  

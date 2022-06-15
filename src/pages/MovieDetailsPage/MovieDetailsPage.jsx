@@ -9,6 +9,10 @@ import {
 import { useState, useEffect } from 'react';
 import { API } from 'pages/services/fetch';
 
+const getClassName = ({isActive}) => {
+  return isActive ? `${s.link} ${s.active}` : s.link
+}
+
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const navigate = useNavigate();
@@ -90,7 +94,7 @@ const MovieDetailsPage = () => {
                 <li className={s.listItem}>
                   <NavLink
                     state={{ from }}
-                    className={s.link}
+                    className={getClassName}
                     to={`/movies/${movieId}/cast`}
                   >
                     Cast
@@ -99,7 +103,7 @@ const MovieDetailsPage = () => {
                 <li className={s.listItem}>
                   <NavLink
                     state={{ from }}
-                    className={s.link}
+                    className={getClassName}
                     to={`/movies/${movieId}/reviews`}
                   >
                     Reviews

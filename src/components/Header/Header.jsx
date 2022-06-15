@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import s from './header.module.css'
 
-const getStatus = ({isActive}) => {
+const getClassName = ({isActive}) => {
    return isActive ? `${s.link} ${s.active}` : s.link
 }
 
@@ -9,17 +9,17 @@ const Header = () => {
     return (
         <header className={s.header}>
             <nav>
-                <span className={s.logo}>
+                <Link to="/" className={s.logo}>
                     MyMovies
-                </span>
+                </Link>
                 <ul className={s.list}>
                     <li className={s.listItem}>
-                        <NavLink className={getStatus}  to="/">
+                        <NavLink className={getClassName}  to="/">
                             Home
                         </NavLink>
                     </li>
                     <li className={s.listItem}>
-                        <NavLink className={getStatus}  to="/movies">
+                        <NavLink className={getClassName}  to="/movies">
                             Movies
                         </NavLink>
                     </li>
