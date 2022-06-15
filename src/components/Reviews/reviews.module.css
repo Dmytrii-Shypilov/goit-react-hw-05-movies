@@ -1,0 +1,38 @@
+.section {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+}
+
+.title {
+    text-align: center;
+}
+
+.list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.author {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.comment {
+    margin-top: 0;
+}
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border: 1px dashed #03a1fc;
+    
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #03a1fc;
+}

@@ -26,6 +26,7 @@ const Cast = () => {
         setCast(prevState => {
           return {
             ...prevState,
+            loading: false,
             actors,
           };
         });
@@ -47,6 +48,9 @@ const Cast = () => {
     const image = profile_path
       ? `https://image.tmdb.org/t/p/w500${profile_path}`
       : 'https://sd.keepcalms.com/i/keep-calm-poster-not-found.png';
+
+
+
     return (
       <li className={s.listItem}>
         <img className={s.image} src={image} alt="" />
@@ -61,10 +65,21 @@ const Cast = () => {
     );
   });
 
+const {actors, loading, error} = cast
+
   return (
     <section className={s.section}>
+      {loading && <p>Loading...</p>}
+      {error && (
+        <>
+          <p>Server error occured</p>
+          <p>{error}</p>
+        </>
+      )}
       <h2 className={s.title}>Cast</h2>
-      <ul className={s.list}>{elements}</ul>
+      <ul className={s.list}>
+      {actors.length>0 ? elements : <div className={s.message}>There are no cast details</div>}
+      </ul>
     </section>
   );
 };

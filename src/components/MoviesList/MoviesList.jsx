@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 
 const MoviesList = ({ movies }) => {
-
+const location = useLocation()
   return (
     <>
       <ul>
@@ -12,7 +12,7 @@ const MoviesList = ({ movies }) => {
             const { id, title } = movie;
             return (
               <li key={id}>
-                <Link to={`/movies/${id}`}>{title}</Link>
+                <Link state={{from: location}} to={`/movies/${id}`}>{title}</Link>
               </li>
             );
           })}

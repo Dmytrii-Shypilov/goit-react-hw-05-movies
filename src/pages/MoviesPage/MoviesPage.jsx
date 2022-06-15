@@ -1,4 +1,4 @@
-import s from './movies-page.module.css'
+import s from './movies-page.module.css';
 
 import Form from 'components/Form';
 import { API } from 'pages/services/fetch';
@@ -8,18 +8,17 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 const MoviesPage = () => {
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams, setSearchParams] = useSearchParams();
   const [movies, setMovies] = useState({
     films: [],
     error: null,
     loading: false,
   });
 
-  const query = searchParams.get("query")
+  const query = searchParams.get('query');
 
   useEffect(() => {
-    
-    async function fetchMovies() {  
+    async function fetchMovies() {
       if (!query) {
         return;
       }
@@ -45,15 +44,21 @@ const MoviesPage = () => {
     fetchMovies();
   }, [searchParams]);
 
-  const onSubmit = (query) => {
-    setSearchParams({query})
-  }
+  const onSubmit = query => {
+    setSearchParams({ query });
+  };
 
-  const { films, loading } = movies;
+  const { films, loading, error } = movies;
   return (
     <section className={s.section}>
       <Form onSubmit={onSubmit} />
-      {loading && <p>...Loading</p>}
+      {loading && <p>Loading...</p>}
+      {error && (
+        <>
+          <p>Server error occured</p>
+          <p>{error}</p>
+        </>
+      )}
       <MoviesList movies={films} />
     </section>
   );
