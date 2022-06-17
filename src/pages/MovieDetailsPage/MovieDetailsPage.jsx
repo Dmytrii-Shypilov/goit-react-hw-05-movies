@@ -84,7 +84,6 @@ const MovieDetailsPage = () => {
             <div className={s.movie}>
               <img
                 className={s.image}
-                width="220"
                 height="auto"
                 src={image}
                 alt=""
