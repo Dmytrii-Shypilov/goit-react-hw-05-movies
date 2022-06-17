@@ -23,9 +23,11 @@ const MoviesPage = () => {
         return;
       }
 
-      setMovies({
-        ...movies,
-        loading: true,
+      setMovies(prevState => {
+        return {
+          ...prevState,
+          loading: true,
+        };
       });
       try {
         const fetched = await API.byQuery(query);
@@ -34,15 +36,17 @@ const MoviesPage = () => {
           return { ...prevMovies, films: fetchedMovies, loading: false };
         });
       } catch (error) {
-        setMovies({
-          ...movies,
-          loading: false,
-          error: error.message,
+        setMovies(prevState => {
+          return {
+            ...prevState,
+            loading: false,
+            error: error.message,
+          };
         });
       }
     }
     fetchMovies();
-  }, [searchParams]);
+  }, [query]);
 
   const onSubmit = query => {
     setSearchParams({ query });

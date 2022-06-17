@@ -1,23 +1,24 @@
 .section {
-    width: 1000px;
-    margin-right: auto;
-    margin-left: auto;
+  width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .list {
-    list-style: none;
+  list-style: none;
+  padding-left: 0;
 }
 
 .listItem {
-margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .link {
-    text-decoration: none;
-    color: black;
-    font-weight: 700;
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
 }
 
 .link:hover {
-    color: grey;
+  color: grey;
 }
