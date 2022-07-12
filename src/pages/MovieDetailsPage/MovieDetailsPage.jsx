@@ -9,7 +9,9 @@ import {
 import { useState, useEffect } from 'react';
 import { API } from 'pages/services/fetch';
 
+
 const getClassName = ({isActive}) => {
+  console.log({isActive})
   return isActive ? `${s.link} ${s.active}` : s.link
 }
 
