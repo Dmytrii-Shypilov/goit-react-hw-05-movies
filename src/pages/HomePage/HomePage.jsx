@@ -2,7 +2,7 @@ import s from './home-page.module.css';
 import MoviesList from 'components/MoviesList';
 import { useState, useEffect } from 'react';
 
-import { API } from 'pages/services/fetch';
+import { API } from 'services/fetch';
 
 const HomePage = () => {
   const [trendMovies, SetTrendMovies] = useState({

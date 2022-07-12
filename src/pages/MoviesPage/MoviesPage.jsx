@@ -1,7 +1,7 @@
 import s from './movies-page.module.css';
 
 import Form from 'components/Form';
-import { API } from 'pages/services/fetch';
+import { API } from 'services/fetch';
 import MoviesList from 'components/MoviesList';
 
 import { useState, useEffect } from 'react';

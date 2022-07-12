@@ -1,6 +1,6 @@
 import s from './reviews.module.css';
 
-import { API } from 'pages/services/fetch';
+import { API } from 'services/fetch';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 

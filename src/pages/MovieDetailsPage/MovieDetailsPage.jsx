@@ -7,7 +7,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { API } from 'pages/services/fetch';
+import { API } from 'services/fetch';
 
 
 const getClassName = ({isActive}) => {
